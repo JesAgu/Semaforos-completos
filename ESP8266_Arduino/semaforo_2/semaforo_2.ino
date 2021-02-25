@@ -48,7 +48,7 @@ void setup() {
   Serial.println("/");
   
   HTTPClient http; // A continuación vamos a ver el estado actual en el que se encuentra el Led al inicializar el Arduino
-  http.begin("http://192.168.1.67:8000/1/read/"); // invocamos el método http y pasamos la Url a la que queremos conectarnos y hacemos la solicitud GET
+  http.begin("http://192.168.1.67:8000/2/read/"); // invocamos el método http y pasamos la Url a la que queremos conectarnos y hacemos la solicitud GET
   int httpCode = http.GET();
   if (httpCode > 0) {// ponemos esta condicion ya que si el valor es menor que 0, significa que hemos tenido un error del cliente al hacer la solicitud GET.
  
@@ -95,13 +95,13 @@ void loop() {
     return; 
    }
    
-  String url = "/1/read/";
+  String url = "/2/read/";
   Serial.print("Requesting URL:");
   Serial.println(url);
 
   Serial.println();
   HTTPClient http;
-  http.begin("http://192.168.1.67:8000/1/read/"); // invocamos el método http y pasamos la Url a la que queremos conectarnos y hacemos la solicitud GET
+  http.begin("http://192.168.1.67:8000/2/read/"); // invocamos el método http y pasamos la Url a la que queremos conectarnos y hacemos la solicitud GET
   int httpCode = http.GET();
 
   if (httpCode > 0) {// ponemos esta condicion ya que si el valor es menor que 0, significa que hemos tenido un error del cliente al hacer la solicitud GET.
